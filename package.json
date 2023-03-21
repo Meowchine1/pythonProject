@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "scipy-integrate": "^0.2.1"
+  }
+}
