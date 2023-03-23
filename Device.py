@@ -1,12 +1,13 @@
 import queue
 
-from Condition import Condition
+import Condition
 from Constant import infinity
+from Requirement import Requirement
 
 
 class Device:
     def __init__(self):
-        self.condition = Condition.FREE  # в начальный момент состояние свободен
+        self.condition = Condition.Condition.FREE  # в начальный момент состояние свободен
         self.t_0 = 0  # начальный момент модельного времент
         self.s_postyp = 0  # момент активации сегмента поступления
         self.s_start = infinity  # момент активации сегмента начала
@@ -14,7 +15,14 @@ class Device:
         self.n_q = 0  # число требований в очереди
         self.Q = queue.LifoQueue()
         self.Q_served = queue.LifoQueue()
+        self.actual_requirement = Requirement()
 
+
+    def set_actual_requirement(self, requirement):
+        self.actual_requirement = requirement
+
+    def get_actual_requirement(self):
+        return self.actual_requirement
     def is_Q_Empty(self):
         return self.Q.empty()
 

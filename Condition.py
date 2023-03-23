@@ -1,6 +1,5 @@
 import enum
-
-Condition = enum.Enum(
-    value='Condition',
-    names=('DEFAULT', 'FREE', 'BUSY', 'STOPPED'),
-)
+from enum import Enum
+class Condition(Enum):
+  FREE = 0
+  BUSY = 1
