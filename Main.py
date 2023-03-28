@@ -198,5 +198,6 @@ n_ = interval1_sum + 2 * interval2_sum + 3 * interval3_sum + 4 * interval4_sum +
 print("оценка математического ожидания числа требований в системе обслуживания =", n_)
 
 
-
-print("вероятность отказа в обслуживании требования =", (fail_req / K)  )
+flow_intensivity = (N_requirement + fail_req) / i
+flow_service = K / i
+print("вероятность отказа в обслуживании требования =", flow_intensivity / (flow_intensivity + flow_service))
